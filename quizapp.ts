@@ -1,4 +1,10 @@
-//* Das Starten des Quizzes*//
+/* Interface für die Objekte*/
+interface Question {
+  text: string;
+  answers: string[];
+  correctAnswer: string;
+  
+}//* Das Starten des Quizzes*//
 
 let currentQuestions: Question[];
 /* vom HTML Quiz*/
@@ -36,13 +42,6 @@ document.querySelector("#mixedQuiz").addEventListener("click", function () {
   const randomFrage = Math.floor(Math.random() * questionsHTML.length);
   newcontent.innerHTML = shownewquestion(questionsmixed[randomFrage])
 });
-
-/* Interface für die Objekte*/
-interface Question {
-  text: string;
-  answers: string[];
-  correctAnswer: string;
-}
 
 /* Quiz-Array für das HTML Quiz*/
 
