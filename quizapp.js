@@ -6,7 +6,7 @@ document.querySelector("#HTMLQuiz").addEventListener("click", function () {
     const randomFrage = Math.floor(Math.random() * questionsHTML.length);
     newcontent.innerHTML = shownewquestion(questionsHTML[randomFrage]);
     /* Nachdem eine Frage genutzt wurde, wird sie aus dem Array entfernt und nicht nochmal gezeigt*/
-    const question = questionsHTML[randomFrage];
+    question = questionsHTML[randomFrage];
     questionsHTML.splice(randomFrage, 1);
 });
 /* vom CSS Quiz*/
