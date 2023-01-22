@@ -3,10 +3,12 @@ interface Question {
   text: string;
   answers: string[];
   correctAnswer: string;
+  moreinfos: string;
+}
 
-}//* Das Starten des Quizzes*//
+//* Das Starten des Quizzes*//
 
-/* eine Variable für das flexible Aufrufen neuer Fragen*/
+/* eine Variable für das flexible Aufrufen neuer Fragen, unabhängig vom ausgewählten Quiz*/
 let currentQuestions: Question[];
 
 /* vom HTML Quiz*/
@@ -16,7 +18,7 @@ document.querySelector("#HTMLQuiz").addEventListener("click", function () {
   let newcontent = document.querySelector("#content")
   /* Die Fragen werden zufällig ausgewählt*/
   const randomFrage = Math.floor(Math.random() * currentQuestions.length);
-  shownewquestion(currentQuestions[randomFrage]);
+  newcontent.innerHTML = shownewquestion(currentQuestions[randomFrage]);
   question = currentQuestions[randomFrage];
   currentQuestions.splice(randomFrage, 1);
 });
@@ -51,42 +53,50 @@ let questionsHTML: Question[] = [
   {
     text: "Was heißt HTML?",
     answers: ["Hyper Text Markup Language", "Hyper Titanium Mark Leauge", "Hyper Text Mission Language"],
-    correctAnswer: "Hyper Text Markup Language"
+    correctAnswer: "Hyper Text Markup Language",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Mit welchem Tag kann man in HTML einen Absatz erstellen?",
     answers: ["br", "bi", "bs"],
-    correctAnswer: "br"
+    correctAnswer: "br",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Müssen alle HTML Tags wieder geschlossen werden?",
     answers: ["Nein", "Ja", "Vielleicht"],
-    correctAnswer: "Nein"
+    correctAnswer: "Nein",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Was ist ein Attribut?",
     answers: ["zusätzliche Information, die ein Tag beinhaltet", "Eine Walart", "Eine Bachelorarbeit"],
-    correctAnswer: "zusätzliche Information, die ein Tag beinhaltet"
+    correctAnswer: "zusätzliche Information, die ein Tag beinhaltet",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Mit welchem Tag kann man einen Link einbauen?",
     answers: ["a", "b", "c"],
-    correctAnswer: "a"
+    correctAnswer: "a",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Funktioniert HTML auch ohne CSS?",
     answers: ["Ja", "Nein", "Manchmal"],
-    correctAnswer: "Ja"
+    correctAnswer: "Ja",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Für was steht API?",
     answers: ["Application Programming Interface", "All Programmers Interface", "Altes Programmier Interface"],
-    correctAnswer: "Application Programming Interface"
+    correctAnswer: "Application Programming Interface",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Welche HTML Variante nutzt man aktuell?",
     answers: ["HTML4", "HTML5", "HTML8"],
-    correctAnswer: "HTML5"
+    correctAnswer: "HTML5",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
 ];
 
@@ -96,17 +106,20 @@ let questionsCSS: Question[] = [
   {
     text: "Was heißt CSS?",
     answers: ["Cascading Style Sheets", "Caspar Simon Shurk", "Computer Style Sheets"],
-    correctAnswer: "Hyper Text Markup Language"
+    correctAnswer: "Hyper Text Markup Language",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Was bedeutet der Selektor #?",
     answers: ["class", "id", "first"],
-    correctAnswer: "id"
+    correctAnswer: "id",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Was ist die Aufgabe von CSS?",
     answers: ["Studenten begeistern", "Professoren begeistern", "Den Code stylen"],
-    correctAnswer: "Den Code stylen"
+    correctAnswer: "Den Code stylen",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   // weitere Fragen ...
 ];
@@ -117,12 +130,14 @@ let questionsTypeScript: Question[] = [
   {
     text: "Was heißt CSS?",
     answers: ["Cascading Style Sheets", "Caspar Simon Shurk", "Computer Style Sheets"],
-    correctAnswer: "Hyper Text Markup Language"
+    correctAnswer: "Hyper Text Markup Language",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Was bedeutet der Selektor Hashtag",
     answers: ["class", "id", "first"],
-    correctAnswer: "id"
+    correctAnswer: "id",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   // weitere Fragen ...
 ];
@@ -133,12 +148,14 @@ let questionsmixed: Question[] = [
   {
     text: "Was heißt CSS?",
     answers: ["Cascading Style Sheets", "Caspar Simon Shurk", "Computer Style Sheets"],
-    correctAnswer: "Hyper Text Markup Language"
+    correctAnswer: "Hyper Text Markup Language",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   {
     text: "Was heißt HTML?",
     answers: ["Hyper Text Markup Language", "Hyper Titanium Mark Leauge", "Hyper Text Mission Language"],
-    correctAnswer: "Hyper Text Markup Language"
+    correctAnswer: "Hyper Text Markup Language",
+    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
   },
   // weitere Fragen ...
 ];
@@ -167,6 +184,8 @@ function shownewquestion(question: Question): string {
 
 //* Funktion, die die Antwort auf richtig und falsch überprüft*//
 
+let moreinfos= document.querySelector("#moreinfos") as HTMLLinkElement
+
 function checkAnswer(question: Question, clickedanswer: string) {
   if (question.correctAnswer == clickedanswer)
 
@@ -175,6 +194,10 @@ function checkAnswer(question: Question, clickedanswer: string) {
     document.querySelector("#deinfeedback").innerHTML = "Juhu, das ist richtig!";
     correctanswers++;
     document.querySelector("#punktestand").innerHTML = "Dein Punktestand: " + correctanswers;
+    /* Weitere Informationen werden angezeigt*/ 
+    document.getElementById("#moreinfos").style.display = "block"; 
+    moreinfos.href = question.moreinfos;
+    document.getElementById("#moreinfos").innerHTML = "Mehr Informationen";
   }
   /* Es wird angezeigt, dass die Frage falsch beantwortet wurde*/
 
@@ -216,6 +239,8 @@ weiterbutton.addEventListener("click", function () {
   newcontent.innerHTML = shownewquestion(currentQuestions[randomFrage]);
   question = currentQuestions[randomFrage];
   currentQuestions.splice(randomFrage, 1);
+  document.getElementById("nextquestionbutton").style.display = "none";
+  document.querySelector("#deinfeedback").innerHTML = "";
   questionsuntil5;
 });
 
