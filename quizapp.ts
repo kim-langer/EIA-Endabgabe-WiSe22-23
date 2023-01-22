@@ -3,10 +3,12 @@ interface Question {
   text: string;
   answers: string[];
   correctAnswer: string;
-  
+
 }//* Das Starten des Quizzes*//
 
+/* eine Variable für das flexible Aufrufen neuer Fragen*/
 let currentQuestions: Question[];
+
 /* vom HTML Quiz*/
 
 document.querySelector("#HTMLQuiz").addEventListener("click", function () {
