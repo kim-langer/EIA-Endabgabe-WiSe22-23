@@ -1,4 +1,4 @@
-/* Interface für die Objekte*/
+/* Interface für die Objekte/der Aufbau einer Frage wird hier definiert*/
 interface Question {
   text: string;
   answers: string[];
@@ -11,7 +11,7 @@ interface Question {
 /* eine Variable für das flexible Aufrufen neuer Fragen, unabhängig vom ausgewählten Quiz*/
 let currentQuestions: Question[];
 
-/* vom HTML Quiz*/
+/* Start HTML Quiz*/
 
 document.querySelector("#HTMLQuiz").addEventListener("click", function () {
   currentQuestions = questionsHTML;
@@ -23,7 +23,7 @@ document.querySelector("#HTMLQuiz").addEventListener("click", function () {
   currentQuestions.splice(randomFrage, 1);
 });
 
-/* vom CSS Quiz*/
+/* Start CSS Quiz*/
 
 document.querySelector("#CSSQuiz").addEventListener("click", function () {
   let newcontent = document.querySelector("#content")
@@ -31,7 +31,7 @@ document.querySelector("#CSSQuiz").addEventListener("click", function () {
   newcontent.innerHTML = shownewquestion(questionsCSS[randomFrage])
 });
 
-/* vom TypeScript Quiz*/
+/* Start TypeScript Quiz*/
 
 document.querySelector("#TypeScriptQuiz").addEventListener("click", function () {
   let newcontent = document.querySelector("#content")
@@ -39,7 +39,7 @@ document.querySelector("#TypeScriptQuiz").addEventListener("click", function () 
   newcontent.innerHTML = shownewquestion(questionsTypeScript[randomFrage])
 });
 
-/* vom gemischten Quiz*/
+/* Start gemischtes Quiz*/
 
 document.querySelector("#mixedQuiz").addEventListener("click", function () {
   let newcontent = document.querySelector("#content")
@@ -222,13 +222,22 @@ document.addEventListener("click", function (event: MouseEvent) {
 
 //* Es werden so lange Fragen gestellt, bis die 5 Punkte erreicht sind*//
 
-function questionsuntil5(punktestand: number): void {
-  while (correctanswers < 5) {
-    // weiter Fragen stellen
-    shownewquestion;
+function questionsuntil5(): void {
+  if (correctanswers === 5) {
+    const endscreen = (): string => {
+      /* ... */
+      return `<div>
+          <h1 class="starttext2">Glückwünsch! Du hast 5 Punkte erreicht und das Quiz geschafft!</h1>
+          <button class="buttondesign3">Yeyy, nächste Runde :)</button>
+        </div>`;
+    };
+    const resultElement = document.querySelector("#quizfertig");
+    resultElement.innerHTML = endscreen();
+    let newcontent = document.querySelector("#content")
+    newcontent.innerHTML = "";
   }
-  console.log("Yeyy geschafft.");
 };
+
 
 //* Beim Klick auf den Weiter Button wird die nächste Frage erscheinen *//
 
@@ -241,7 +250,7 @@ weiterbutton.addEventListener("click", function () {
   currentQuestions.splice(randomFrage, 1);
   document.getElementById("nextquestionbutton").style.display = "none";
   document.querySelector("#deinfeedback").innerHTML = "";
-  questionsuntil5;
+  questionsuntil5();
 });
 
 
