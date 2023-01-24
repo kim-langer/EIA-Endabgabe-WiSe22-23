@@ -13,21 +13,30 @@ document.querySelector("#HTMLQuiz").addEventListener("click", function () {
 });
 /* Start CSS Quiz*/
 document.querySelector("#CSSQuiz").addEventListener("click", function () {
+    currentQuestions = questionsCSS;
     let newcontent = document.querySelector("#content");
-    const randomFrage = Math.floor(Math.random() * questionsHTML.length);
-    newcontent.innerHTML = shownewquestion(questionsCSS[randomFrage]);
+    const randomFrage = Math.floor(Math.random() * currentQuestions.length);
+    newcontent.innerHTML = shownewquestion(currentQuestions[randomFrage]);
+    question = currentQuestions[randomFrage];
+    currentQuestions.splice(randomFrage, 1);
 });
 /* Start TypeScript Quiz*/
 document.querySelector("#TypeScriptQuiz").addEventListener("click", function () {
+    currentQuestions = questionsTypeScript;
     let newcontent = document.querySelector("#content");
-    const randomFrage = Math.floor(Math.random() * questionsHTML.length);
-    newcontent.innerHTML = shownewquestion(questionsTypeScript[randomFrage]);
+    const randomFrage = Math.floor(Math.random() * currentQuestions.length);
+    newcontent.innerHTML = shownewquestion(currentQuestions[randomFrage]);
+    question = currentQuestions[randomFrage];
+    currentQuestions.splice(randomFrage, 1);
 });
 /* Start gemischtes Quiz*/
 document.querySelector("#mixedQuiz").addEventListener("click", function () {
+    currentQuestions = questionsmixed;
     let newcontent = document.querySelector("#content");
-    const randomFrage = Math.floor(Math.random() * questionsHTML.length);
-    newcontent.innerHTML = shownewquestion(questionsmixed[randomFrage]);
+    const randomFrage = Math.floor(Math.random() * currentQuestions.length);
+    newcontent.innerHTML = shownewquestion(currentQuestions[randomFrage]);
+    question = currentQuestions[randomFrage];
+    currentQuestions.splice(randomFrage, 1);
 });
 /* Quiz-Array für das HTML Quiz*/
 let questionsHTML = [
@@ -35,49 +44,49 @@ let questionsHTML = [
         text: "Was heißt HTML?",
         answers: ["Hyper Text Markup Language", "Hyper Titanium Mark Leauge", "Hyper Text Mission Language"],
         correctAnswer: "Hyper Text Markup Language",
-        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+        moreinfos: "https://www.w3schools.com"
     },
     {
         text: "Mit welchem Tag kann man in HTML einen Absatz erstellen?",
         answers: ["br", "bi", "bs"],
         correctAnswer: "br",
-        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+        moreinfos: "https://www.w3schools.com"
     },
     {
         text: "Müssen alle HTML Tags wieder geschlossen werden?",
         answers: ["Nein", "Ja", "Vielleicht"],
         correctAnswer: "Nein",
-        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+        moreinfos: "https://www.w3schools.com"
     },
     {
         text: "Was ist ein Attribut?",
         answers: ["zusätzliche Information, die ein Tag beinhaltet", "Eine Walart", "Eine Bachelorarbeit"],
         correctAnswer: "zusätzliche Information, die ein Tag beinhaltet",
-        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+        moreinfos: "https://www.w3schools.com"
     },
     {
         text: "Mit welchem Tag kann man einen Link einbauen?",
         answers: ["a", "b", "c"],
         correctAnswer: "a",
-        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+        moreinfos: "https://www.w3schools.com"
     },
     {
         text: "Funktioniert HTML auch ohne CSS?",
         answers: ["Ja", "Nein", "Manchmal"],
         correctAnswer: "Ja",
-        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+        moreinfos: "https://www.w3schools.com"
     },
     {
         text: "Für was steht API?",
         answers: ["Application Programming Interface", "All Programmers Interface", "Altes Programmier Interface"],
         correctAnswer: "Application Programming Interface",
-        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+        moreinfos: "https://www.w3schools.com"
     },
     {
         text: "Welche HTML Variante nutzt man aktuell?",
         answers: ["HTML4", "HTML5", "HTML8"],
         correctAnswer: "HTML5",
-        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+        moreinfos: "https://www.w3schools.com"
     },
 ];
 /* Quiz-Array für das CSS Quiz*/
@@ -100,20 +109,85 @@ let questionsCSS = [
         correctAnswer: "Den Code stylen",
         moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
     },
-    // weitere Fragen ...
+    {
+        text: "Wie ändert man in CSS die Textfarbe?",
+        answers: ["color", "height", "top"],
+        correctAnswer: "color",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Wie ändert man in CSS die Hintergrundfarbe?",
+        answers: ["background-color", "background-border", "background-height"],
+        correctAnswer: "background-color",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Warum ist CSS so toll?",
+        answers: ["macht mehr Spaß als Skriptsprache", "darum", "deshalb"],
+        correctAnswer: "macht mehr Spaß als Skriptsprache",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Was heißt rot auf Englisch?",
+        answers: ["red", "green", "yellow"],
+        correctAnswer: "red",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Was beudetet display hidden?",
+        answers: ["es versteckt sich", "es erscheint", "es möchte gehen"],
+        correctAnswer: "es versteckt sich",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
 ];
 /* Quiz-Array für das TypeScript Quiz*/
 let questionsTypeScript = [
     {
-        text: "Was heißt CSS?",
-        answers: ["Cascading Style Sheets", "Caspar Simon Shurk", "Computer Style Sheets"],
-        correctAnswer: "Hyper Text Markup Language",
+        text: "Wie kann man eine Variable definieren?",
+        answers: ["let", "car", "hi"],
+        correctAnswer: "let",
         moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
     },
     {
-        text: "Was bedeutet der Selektor Hashtag",
-        answers: ["class", "id", "first"],
-        correctAnswer: "id",
+        text: "Was ist ein Array?",
+        answers: ["Pfeil & Bogen", "eine Ansammlung von Werten", "ein britisches Frühstück"],
+        correctAnswer: "eine Ansammlung von Werten",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Auf welcher Sprache basiert TypeScript?",
+        answers: ["JavaScript", "PHP", "was anderes"],
+        correctAnswer: "JavaScript",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Wie kann man multiplizieren?",
+        answers: ["*", "/", "%"],
+        correctAnswer: "*",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Wie weist man einem Wert richtig oder falsch zu?",
+        answers: ["boolean", "string", "EIA"],
+        correctAnswer: "boolean",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Wie kann man das HTML manipulieren?",
+        answers: ["mit innerHTML", "mit hiHTML", "gar nicht"],
+        correctAnswer: "mit innerHTML",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Welche Zahlen gibt Math.random aus?",
+        answers: ["zwischen 0-1", "zwischen 0-100", "zwischen 0-1000"],
+        correctAnswer: "zwischen 0-1",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Was definiert den Wert einer Grundfarbe?",
+        answers: ["RRGGBB", "PPHH9", "ZZ62"],
+        correctAnswer: "RRGGBB",
         moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
     },
     // weitere Fragen ...
@@ -121,18 +195,53 @@ let questionsTypeScript = [
 /* Quiz-Array für das gemischte Quiz*/
 let questionsmixed = [
     {
-        text: "Was heißt CSS?",
-        answers: ["Cascading Style Sheets", "Caspar Simon Shurk", "Computer Style Sheets"],
-        correctAnswer: "Hyper Text Markup Language",
+        text: "Wie kann man eine Variable definieren?",
+        answers: ["let", "car", "hi"],
+        correctAnswer: "let",
         moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
     },
     {
-        text: "Was heißt HTML?",
-        answers: ["Hyper Text Markup Language", "Hyper Titanium Mark Leauge", "Hyper Text Mission Language"],
-        correctAnswer: "Hyper Text Markup Language",
+        text: "Was beudetet display hidden?",
+        answers: ["es versteckt sich", "es erscheint", "es möchte gehen"],
+        correctAnswer: "es versteckt sich",
         moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
     },
-    // weitere Fragen ...
+    {
+        text: "Was ist die Aufgabe von CSS?",
+        answers: ["Studenten begeistern", "Professoren begeistern", "Den Code stylen"],
+        correctAnswer: "Den Code stylen",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Müssen alle HTML Tags wieder geschlossen werden?",
+        answers: ["Nein", "Ja", "Vielleicht"],
+        correctAnswer: "Nein",
+        moreinfos: "https://www.w3schools.com"
+    },
+    {
+        text: "Was ist ein Attribut?",
+        answers: ["zusätzliche Information, die ein Tag beinhaltet", "Eine Walart", "Eine Bachelorarbeit"],
+        correctAnswer: "zusätzliche Information, die ein Tag beinhaltet",
+        moreinfos: "https://www.w3schools.com"
+    },
+    {
+        text: "Mit welchem Tag kann man einen Link einbauen?",
+        answers: ["a", "b", "c"],
+        correctAnswer: "a",
+        moreinfos: "https://www.w3schools.com"
+    },
+    {
+        text: "Wie kann man das HTML manipulieren?",
+        answers: ["mit innerHTML", "mit hiHTML", "gar nicht"],
+        correctAnswer: "mit innerHTML",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
+    {
+        text: "Welche Zahlen gibt Math.random aus?",
+        answers: ["zwischen 0-1", "zwischen 0-100", "zwischen 0-1000"],
+        correctAnswer: "zwischen 0-1",
+        moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    },
 ];
 /* Variablen für den Punktestand*/
 let correctanswers = 0;
@@ -153,6 +262,9 @@ function shownewquestion(question) {
 ;
 //* Funktion, die die Antwort auf richtig und falsch überprüft*//
 let moreinfos = document.querySelector("#moreinfos");
+let button0 = document.getElementById("button0");
+let button1 = document.getElementById("button1");
+let button2 = document.getElementById("button2");
 function checkAnswer(question, clickedanswer) {
     if (question.correctAnswer == clickedanswer) 
     /* Es wird angezeigt, dass die Frage richtig beantwortet wurde*/ {
@@ -164,11 +276,18 @@ function checkAnswer(question, clickedanswer) {
         document.getElementById("#moreinfos").style.display = "block";
         moreinfos.href = question.moreinfos;
         document.getElementById("#moreinfos").innerHTML = "Mehr Informationen";
+        /* Die Buttons sind nur einmal klickbar, indem sie nach dem ersten Ausführen der Funktion deaktiviert werden*/
+        button0.disabled = true;
+        button1.disabled = true;
+        button2.disabled = true;
     }
     /* Es wird angezeigt, dass die Frage falsch beantwortet wurde*/
     else {
         document.getElementById("nextquestionbutton").style.display = "block";
         document.querySelector("#deinfeedback").innerHTML = "Das war leider nicht korrekt!";
+        button0.disabled = true;
+        button1.disabled = true;
+        button2.disabled = true;
     }
 }
 ;
@@ -192,7 +311,7 @@ function questionsuntil5() {
             /* ... */
             return `<div>
           <h1 class="starttext2">Glückwünsch! Du hast 5 Punkte erreicht und das Quiz geschafft!</h1>
-          <button class="buttondesign3">Yeyy, nächste Runde :)</button>
+          <button class="buttondesign3" id="nextroundbutton">Yeyy, nächste Runde :)</button>
         </div>`;
         };
         const resultElement = document.querySelector("#quizfertig");
@@ -213,5 +332,11 @@ weiterbutton.addEventListener("click", function () {
     document.getElementById("nextquestionbutton").style.display = "none";
     document.querySelector("#deinfeedback").innerHTML = "";
     questionsuntil5();
+});
+//* Eine neue Runde kann gestartet werden *//
+let newround = document.querySelector("#nextroundbutton");
+newround.addEventListener("click", function () {
+    let newcontent = document.querySelector("#content");
+    newcontent.innerHTML = "";
 });
 //# sourceMappingURL=quizapp.js.map
