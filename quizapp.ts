@@ -63,49 +63,49 @@ let questionsHTML: Question[] = [
     text: "Was heißt HTML?",
     answers: ["Hyper Text Markup Language", "Hyper Titanium Mark Leauge", "Hyper Text Mission Language"],
     correctAnswer: "Hyper Text Markup Language",
-    moreinfos: "https://www.w3schools.com"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
   {
     text: "Mit welchem Tag kann man in HTML einen Absatz erstellen?",
     answers: ["br", "bi", "bs"],
     correctAnswer: "br",
-    moreinfos: "https://www.w3schools.com"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
   {
     text: "Müssen alle HTML Tags wieder geschlossen werden?",
     answers: ["Nein", "Ja", "Vielleicht"],
     correctAnswer: "Nein",
-    moreinfos: "https://www.w3schools.com"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
   {
     text: "Was ist ein Attribut?",
     answers: ["zusätzliche Information, die ein Tag beinhaltet", "Eine Walart", "Eine Bachelorarbeit"],
     correctAnswer: "zusätzliche Information, die ein Tag beinhaltet",
-    moreinfos: "https://www.w3schools.com"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
   {
     text: "Mit welchem Tag kann man einen Link einbauen?",
     answers: ["a", "b", "c"],
     correctAnswer: "a",
-    moreinfos: "https://www.w3schools.com"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
   {
     text: "Funktioniert HTML auch ohne CSS?",
     answers: ["Ja", "Nein", "Manchmal"],
     correctAnswer: "Ja",
-    moreinfos: "https://www.w3schools.com"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
   {
     text: "Für was steht API?",
     answers: ["Application Programming Interface", "All Programmers Interface", "Altes Programmier Interface"],
     correctAnswer: "Application Programming Interface",
-    moreinfos: "https://www.w3schools.com"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
   {
     text: "Welche HTML Variante nutzt man aktuell?",
     answers: ["HTML4", "HTML5", "HTML8"],
     correctAnswer: "HTML5",
-    moreinfos: "https://www.w3schools.com"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
 ];
 
@@ -265,7 +265,7 @@ let questionsmixed: Question[] = [
     text: "Welche Zahlen gibt Math.random aus?",
     answers: ["zwischen 0-1", "zwischen 0-100", "zwischen 0-1000"],
     correctAnswer: "zwischen 0-1",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
   },
 ];
 
@@ -293,7 +293,7 @@ function shownewquestion(question: Question): string {
 
 //* Funktion, die die Antwort auf richtig und falsch überprüft*//
 
-let moreinfos= document.querySelector("#moreinfos") as HTMLLinkElement
+let moreinfos = document.querySelector("#moreinfos") as HTMLLinkElement
 
 let button0 = document.getElementById("button0") as HTMLButtonElement
 let button1 = document.getElementById("button1") as HTMLButtonElement
@@ -348,8 +348,8 @@ function questionsuntil5(): void {
     const endscreen = (): string => {
       /* ... */
       return `<div>
-          <h1 class="starttext2">Glückwünsch! Du hast 5 Punkte erreicht und das Quiz geschafft!</h1>
-          <button class="buttondesign3" id="nextroundbutton">Yeyy, nächste Runde :)</button>
+          <h1 class="starttext2">Glückwünsch! Du hast 5/5 Punkten erreicht!</h1>
+          <button id="nextroundbutton" class="buttondesign3">Yeyy, nächste Runde :)</button>
         </div>`;
     };
     const resultElement = document.querySelector("#quizfertig");
@@ -377,9 +377,6 @@ weiterbutton.addEventListener("click", function () {
 
 //* Eine neue Runde kann gestartet werden *//
 
-let newround = document.querySelector("#nextroundbutton")
-
-newround.addEventListener("click", function () {
-  let newcontent = document.querySelector("#content")
-  newcontent.innerHTML = ""
+document.querySelector("#nextroundbutton").addEventListener("click", function () {
+  window.location.reload();
 } );
