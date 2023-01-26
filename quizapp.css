@@ -58,7 +58,7 @@ body {
 
 .buttondesign2 {
   background-color: hsl(177, 42%, 29%);
-  top: 40px;
+  top: 10px;
   border: none;
   border-radius: 4px;
   color: white;
@@ -101,7 +101,7 @@ body {
 /* Der Feedback Text für die beantworteten Fragen (erscheint erst durch TypeScript) */
 
 #deinfeedback {
-  top: 35px;
+  top: 30px;
   margin-left: 3px;
   size: 10px;
   position: relative;
@@ -110,7 +110,12 @@ body {
 
 #moreinfos {
   display: none;
-  color: blueviolet;
+  color: rgb(165, 236, 179);
+  position: relative;
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: small;
+  text-decoration: wavy;
 }
 
 /* Der Text bei erfolgreichem Beenden des Quizzes (erscheint erst durch TypeScript) */

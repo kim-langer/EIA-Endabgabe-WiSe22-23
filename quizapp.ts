@@ -1,3 +1,5 @@
+//* Anmerkung: Das Prinzip, dass die Fragen über return mit neuem HTML Content erstellt werden, sowie Funktionen die damit zusammenhängen, habe ich zusammen mit Marie Eckl erarbeitet.*//
+
 /* Interface für die Objekte/der Aufbau einer Frage wird hier definiert*/
 interface Question {
   text: string;
@@ -63,49 +65,49 @@ let questionsHTML: Question[] = [
     text: "Was heißt HTML?",
     answers: ["Hyper Text Markup Language", "Hyper Titanium Mark Leauge", "Hyper Text Mission Language"],
     correctAnswer: "Hyper Text Markup Language",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Mit welchem Tag kann man in HTML einen Absatz erstellen?",
     answers: ["br", "bi", "bs"],
     correctAnswer: "br",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Müssen alle HTML Tags wieder geschlossen werden?",
     answers: ["Nein", "Ja", "Vielleicht"],
     correctAnswer: "Nein",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was ist ein Attribut?",
     answers: ["zusätzliche Information, die ein Tag beinhaltet", "Eine Walart", "Eine Bachelorarbeit"],
     correctAnswer: "zusätzliche Information, die ein Tag beinhaltet",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Mit welchem Tag kann man einen Link einbauen?",
     answers: ["a", "b", "c"],
     correctAnswer: "a",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Funktioniert HTML auch ohne CSS?",
     answers: ["Ja", "Nein", "Manchmal"],
     correctAnswer: "Ja",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Für was steht API?",
     answers: ["Application Programming Interface", "All Programmers Interface", "Altes Programmier Interface"],
     correctAnswer: "Application Programming Interface",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Welche HTML Variante nutzt man aktuell?",
     answers: ["HTML4", "HTML5", "HTML8"],
     correctAnswer: "HTML5",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    moreinfos: "https://www.w3schools.com"
   },
 ];
 
@@ -116,49 +118,49 @@ let questionsCSS: Question[] = [
     text: "Was heißt CSS?",
     answers: ["Cascading Style Sheets", "Caspar Simon Shurk", "Computer Style Sheets"],
     correctAnswer: "Hyper Text Markup Language",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was bedeutet der Selektor #?",
     answers: ["class", "id", "first"],
     correctAnswer: "id",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was ist die Aufgabe von CSS?",
     answers: ["Studenten begeistern", "Professoren begeistern", "Den Code stylen"],
     correctAnswer: "Den Code stylen",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Wie ändert man in CSS die Textfarbe?",
     answers: ["color", "height", "top"],
     correctAnswer: "color",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Wie ändert man in CSS die Hintergrundfarbe?",
     answers: ["background-color", "background-border", "background-height"],
     correctAnswer: "background-color",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Warum ist CSS so toll?",
     answers: ["macht mehr Spaß als Skriptsprache", "darum", "deshalb"],
     correctAnswer: "macht mehr Spaß als Skriptsprache",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was heißt rot auf Englisch?",
     answers: ["red", "green", "yellow"],
     correctAnswer: "red",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was beudetet display hidden?",
     answers: ["es versteckt sich", "es erscheint", "es möchte gehen"],
     correctAnswer: "es versteckt sich",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
 ];
 
@@ -169,51 +171,50 @@ let questionsTypeScript: Question[] = [
     text: "Wie kann man eine Variable definieren?",
     answers: ["let", "car", "hi"],
     correctAnswer: "let",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was ist ein Array?",
     answers: ["Pfeil & Bogen", "eine Ansammlung von Werten", "ein britisches Frühstück"],
     correctAnswer: "eine Ansammlung von Werten",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
-    text: "Auf welcher Sprache basiert TypeScript?",
+    text: "Mit welcher Sprache steht TypeScript in Verbindung?",
     answers: ["JavaScript", "PHP", "was anderes"],
     correctAnswer: "JavaScript",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Wie kann man multiplizieren?",
     answers: ["*", "/", "%"],
     correctAnswer: "*",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Wie weist man einem Wert richtig oder falsch zu?",
     answers: ["boolean", "string", "EIA"],
     correctAnswer: "boolean",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Wie kann man das HTML manipulieren?",
     answers: ["mit innerHTML", "mit hiHTML", "gar nicht"],
     correctAnswer: "mit innerHTML",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
-    text: "Welche Zahlen gibt Math.random aus?",
-    answers: ["zwischen 0-1", "zwischen 0-100", "zwischen 0-1000"],
-    correctAnswer: "zwischen 0-1",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    text: "Wann wurde die erste Version von TypeScript veröffentlicht?",
+    answers: ["2012", "1923", "1980"],
+    correctAnswer: "2012",
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was definiert den Wert einer Grundfarbe?",
     answers: ["RRGGBB", "PPHH9", "ZZ62"],
     correctAnswer: "RRGGBB",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
-  // weitere Fragen ...
 ];
 
 /* Quiz-Array für das gemischte Quiz*/
@@ -223,19 +224,19 @@ let questionsmixed: Question[] = [
     text: "Wie kann man eine Variable definieren?",
     answers: ["let", "car", "hi"],
     correctAnswer: "let",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was beudetet display hidden?",
     answers: ["es versteckt sich", "es erscheint", "es möchte gehen"],
     correctAnswer: "es versteckt sich",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Was ist die Aufgabe von CSS?",
     answers: ["Studenten begeistern", "Professoren begeistern", "Den Code stylen"],
     correctAnswer: "Den Code stylen",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
     text: "Müssen alle HTML Tags wieder geschlossen werden?",
@@ -259,13 +260,13 @@ let questionsmixed: Question[] = [
     text: "Wie kann man das HTML manipulieren?",
     answers: ["mit innerHTML", "mit hiHTML", "gar nicht"],
     correctAnswer: "mit innerHTML",
-    moreinfos: "https://de.wikipedia.org/wiki/Heidelbeere"
+    moreinfos: "https://www.w3schools.com"
   },
   {
-    text: "Welche Zahlen gibt Math.random aus?",
-    answers: ["zwischen 0-1", "zwischen 0-100", "zwischen 0-1000"],
-    correctAnswer: "zwischen 0-1",
-    moreinfos: "<a href= 'https://de.wikipedia.org/wiki/Heidelbeere'> Mehr Infos findest du hier </a>"
+    text: "Wann wurde die erste Version von TypeScript veröffentlicht?",
+    answers: ["2012", "1923", "1980"],
+    correctAnswer: "2012",
+    moreinfos: "https://www.w3schools.com"
   },
 ];
 
@@ -295,11 +296,12 @@ function shownewquestion(question: Question): string {
 
 let moreinfos = document.querySelector("#moreinfos") as HTMLLinkElement
 
-let button0 = document.getElementById("button0") as HTMLButtonElement
-let button1 = document.getElementById("button1") as HTMLButtonElement
-let button2 = document.getElementById("button2") as HTMLButtonElement
 
 function checkAnswer(question: Question, clickedanswer: string) {
+   /* Variablen, die auf die Buttons aus der shownewquestion Funktion zugreifen*/
+  let button0 = document.getElementById("button0") as HTMLButtonElement
+  let button1 = document.getElementById("button1") as HTMLButtonElement
+  let button2 = document.getElementById("button2") as HTMLButtonElement
   if (question.correctAnswer == clickedanswer)
 
     /* Es wird angezeigt, dass die Frage richtig beantwortet wurde*/ {
@@ -307,33 +309,35 @@ function checkAnswer(question: Question, clickedanswer: string) {
     document.querySelector("#deinfeedback").innerHTML = "Juhu, das ist richtig!";
     correctanswers++;
     document.querySelector("#punktestand").innerHTML = "Dein Punktestand: " + correctanswers;
-    /* Weitere Informationen werden angezeigt*/ 
-    document.getElementById("#moreinfos").style.display = "block"; 
+    /* Weitere Informationen werden angezeigt*/
+    document.getElementById("moreinfos").style.display = "block";
     moreinfos.href = question.moreinfos;
-    document.getElementById("#moreinfos").innerHTML = "Mehr Informationen";
-    /* Die Buttons sind nur einmal klickbar, indem sie nach dem ersten Ausführen der Funktion deaktiviert werden*/ 
+    document.getElementById("moreinfos").innerHTML = "Du willst mehr darüber wissen? Klicke hier!";
+    /* Die Buttons sind nur einmal klickbar, indem sie nach dem ersten Ausführen der Funktion deaktiviert werden*/
     button0.disabled = true;
     button1.disabled = true;
     button2.disabled = true;
+
   }
   /* Es wird angezeigt, dass die Frage falsch beantwortet wurde*/
 
   else {
     document.getElementById("nextquestionbutton").style.display = "block";
     document.querySelector("#deinfeedback").innerHTML = "Das war leider nicht korrekt!";
+    document.getElementById("moreinfos").innerHTML = "Du willst mehr darüber wissen? Klicke hier!";
     button0.disabled = true;
     button1.disabled = true;
     button2.disabled = true;
   }
 };
 
-/* Eventlistener fürs Klicken auf die Antworten */
+/* Eventlistener fürs Klicken auf die Antwortbuttons */
 
 document.addEventListener("click", function (event: MouseEvent) {
   let button = event.target as HTMLButtonElement
   if (button.id == "button0") {
     checkAnswer(question, question.answers[0]
-      );
+    );
   } else if (button.id == "button1") {
     checkAnswer(question, question.answers[1]);
   } else if (button.id == "button2") {
@@ -356,9 +360,12 @@ function questionsuntil5(): void {
     resultElement.innerHTML = endscreen();
     let newcontent = document.querySelector("#content")
     newcontent.innerHTML = "";
+    //* Eine neue Runde kann gestartet werden *//
+    document.querySelector("#nextroundbutton").addEventListener("click", function () {
+      window.location.reload();
+    });
   }
 };
-
 
 //* Beim Klick auf den Weiter Button wird die nächste Frage erscheinen *//
 
@@ -371,12 +378,6 @@ weiterbutton.addEventListener("click", function () {
   currentQuestions.splice(randomFrage, 1);
   document.getElementById("nextquestionbutton").style.display = "none";
   document.querySelector("#deinfeedback").innerHTML = "";
+  document.getElementById("moreinfos").innerHTML = "";
   questionsuntil5();
 });
-
-
-//* Eine neue Runde kann gestartet werden *//
-
-document.querySelector("#nextroundbutton").addEventListener("click", function () {
-  window.location.reload();
-} );
